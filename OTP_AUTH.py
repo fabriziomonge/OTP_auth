@@ -39,23 +39,30 @@ else:
     value = "2"
 
 if value != "2":
-    PSW = st.text_input("Inserire il codice ricevuto tramite sms") #streamlit code
+    PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
     # PSW = input("Inserire il codice ricevuto tramite sms") #jupytercode
-
-    if PSW == value:
-#     print("Autenticazione riuscita") #jupytercode
     
+    if PSW == "in attesa":
         st.write("""
-        # Autenticazione effettuata.
+        # In attesa del codice
         """) #streamlit code
-    
-        autorizzazione = "OK"
-    
+        
     else:
-#     print("Autenticazione fallita!") #jupytercode
-
-        st.write("""
-        # Autenticazione fallita.
-        """) #streamlit code
+                
+        if PSW == value:
+#       print("Autenticazione riuscita") #jupytercode
     
-        autorizzazione = "NO"
+            st.write("""
+            # Autenticazione effettuata.
+            """) #streamlit code
+    
+            autorizzazione = "OK"
+    
+        else:
+#       print("Autenticazione fallita!") #jupytercode
+
+            st.write("""
+            # Autenticazione fallita.
+            """) #streamlit code
+    
+            autorizzazione = "NO"
