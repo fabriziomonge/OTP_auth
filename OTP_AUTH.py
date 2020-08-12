@@ -9,6 +9,9 @@ username = "fabriziomonge"
 token = "FXYszXlUIdZKW3xVC8da90mTm30RME"
 client = TextmagicRestClient(username, token)
 
+from PIL import Image
+image = Image.open('lucchetto.png')
+st.sidebar.image(image, use_column_width=True)
 
 st.title("Applicazione per convalida accessi con OTP")
 
