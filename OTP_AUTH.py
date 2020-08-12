@@ -26,10 +26,12 @@ def generator(inizio,fine,number):
     
     return value, message
 
-value=generator(inizio,fine,number)[0]
+
 
 if number != "00394":
     
+    generator(inizio,fine,number)
+    value=generator(inizio,fine,number)[0]
     PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa")
     
     if PSW == "in attesa":
