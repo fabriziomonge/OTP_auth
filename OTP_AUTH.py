@@ -22,9 +22,9 @@ number = "0039"+number
 
 if number != "00394":
     
-    st.write(generator)
+    Codice = st.checkbox("codice rivevuto")
     try:
-        if generator == "OFF":
+        if Codice == True:
             value = value
             st.write("generator è uguale a off")
             
