@@ -5,6 +5,12 @@
 
 
 import streamlit as st
+from textmagic.rest import TextmagicRestClient
+from random import seed
+from random import randint
+username = "fabriziomonge"
+token = "FXYszXlUIdZKW3xVC8da90mTm30RME"
+client = TextmagicRestClient(username, token)
 
 # number = input("inserire il proprio numero di cellulare per autenticazione") #jupytercode
 
@@ -14,37 +20,23 @@ number = "0039"+number
 
 if number != "00394":
     
-
-    # generate random integer values
-    from random import seed
-    from random import randint
-    # seed random number generator
-    
-    # generate some integers
-    
+  
     try:
-        if generator != "OFF"
+        if generator != "OFF":
             value = randint(1000, 9999)
             value = str(value)
+            message = client.messages.create(phones=number, text=value)
         else:
             value = value
     except:
             value = randint(1000, 9999)
             value = str(value)
-        
-
-    from textmagic.rest import TextmagicRestClient
-  
-    username = "fabriziomonge"
-    token = "FXYszXlUIdZKW3xVC8da90mTm30RME"
-    client = TextmagicRestClient(username, token)
-    # weYT0IOJ1c api password
-  
-    message = client.messages.create(phones=number, text=value)
+            message = client.messages.create(phones=number, text=value)
     
 else:
     
     value = "2"
+
 
 if value != "2":
     PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
