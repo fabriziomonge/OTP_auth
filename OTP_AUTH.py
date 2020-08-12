@@ -27,14 +27,17 @@ if number != "00394":
             value = str(value)
             message = client.messages.create(phones=number, text=value)
             PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
+            st.write("generator è diverso da off")
         else:
             value = value
+            st.write("generator è uguale a off")
     except:
             value = randint(1000, 9999)
             value = str(value)
             message = client.messages.create(phones=number, text=value)
             PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
-    
+            st.write("ti trovi nella eccezione del try")
+            
 else:
     
     value = "2"
