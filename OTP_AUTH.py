@@ -10,7 +10,7 @@ token = "FXYszXlUIdZKW3xVC8da90mTm30RME"
 client = TextmagicRestClient(username, token)
 
 
-st.title("Applicazione per convelida accessi con OTP")
+st.title("Applicazione per convalida accessi con OTP")
 
 inizio = 1000
 
@@ -21,7 +21,7 @@ fine = 9999
 
 st.write("## Questa applicazione permette di convalidare un utente tramite una password numerica di quattro caratteri inviata tramite sms sul cellulare dell' utente")
 
-number = st.text_input("inserire il proprio numero di cellulare per autenticazione", "4") #streamlit code
+number = st.text_input("inserire il proprio numero di cellulare per autenticazione", "") #streamlit code
 
 number = "0039"+number
 
@@ -36,7 +36,7 @@ def generator(inizio,fine,number):
 
 
 
-if number != "00394":
+if number != "0039":
     
     generator(inizio,fine,number)
     value=generator(inizio,fine,number)[0]
@@ -45,12 +45,12 @@ if number != "00394":
     PSW = st.text_input("Inserire il codice ricevuto tramite sms e premere invio", "")
     
     if PSW == "":
-        st.write("In attesa del codice di conferma")
+        st.write("# STATO: In attesa del codice di conferma")
     else:
         if PSW == value:
             
-            st.write("# Utente Convalidato")
+            st.write("# STATO: Utente Convalidato")
         else:
             
-            st.write("# Accesso negato")
+            st.write("# STATO: Accesso negato")
     
