@@ -8,11 +8,11 @@ import streamlit as st
 
 # number = input("inserire il proprio numero di cellulare per autenticazione") #jupytercode
 
-number = st.number_input("inserire il proprio numero di cellulare per autenticazione", 4) #streamlit code
+number = st.text_input("inserire il proprio numero di cellulare per autenticazione", "4") #streamlit code
 
 number = "0039"+number
 
-if number != 4:
+if number != "00394":
     
 
     # generate random integer values
