@@ -1,3 +1,2 @@
 streamlit==0.63.0
-random
 textmagic
