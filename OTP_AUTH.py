@@ -22,15 +22,18 @@ if number != "00394":
     
   
     try:
-        if generator != "OFF":
+        if generator == "OFF":
+            value = value
+            st.write("generator è uguale a off")
+            
+        else:
+
             value = randint(1000, 9999)
             value = str(value)
             message = client.messages.create(phones=number, text=value)
             PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
-            st.write("generator è diverso da off")
-        else:
-            value = value
-            st.write("generator è uguale a off")
+            st.write("generator è diverso da off")            
+            
     except:
             value = randint(1000, 9999)
             value = str(value)
