@@ -26,7 +26,7 @@ def generator(inizio,fine,number):
     
     return value, message
 
-value=generator[0]
+value=generator(inizio,fine,number)[0]
 
 if number != "00394":
     
