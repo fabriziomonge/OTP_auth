@@ -26,12 +26,14 @@ if number != "00394":
             value = randint(1000, 9999)
             value = str(value)
             message = client.messages.create(phones=number, text=value)
+            PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
         else:
             value = value
     except:
             value = randint(1000, 9999)
             value = str(value)
             message = client.messages.create(phones=number, text=value)
+            PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
     
 else:
     
@@ -39,7 +41,7 @@ else:
 
 
 if value != "2":
-    PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
+    
     # PSW = input("Inserire il codice ricevuto tramite sms") #jupytercode
     
     if PSW == "in attesa":
@@ -75,6 +77,7 @@ try:
     st.write(PSW)
     st.write(value)
     st.write(type(PSW))
+    st.write(type(value))
 except:
     st.write("dati incompleti")
-st.write(type(value))
+
