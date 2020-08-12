@@ -21,9 +21,17 @@ if number != "00394":
     # seed random number generator
     
     # generate some integers
-
-    value = randint(1000, 9999)
-    value = str(value)
+    
+    try:
+        if generator != "OFF"
+            value = randint(1000, 9999)
+            value = str(value)
+        else:
+            value = value
+    except:
+            value = randint(1000, 9999)
+            value = str(value)
+        
 
     from textmagic.rest import TextmagicRestClient
   
@@ -57,6 +65,7 @@ if value != "2":
             """) #streamlit code
     
             autorizzazione = "OK"
+            generator = "OFF"
     
         else:
 #       print("Autenticazione fallita!") #jupytercode
@@ -66,3 +75,4 @@ if value != "2":
             """) #streamlit code
     
             autorizzazione = "NO"
+            generator = "OFF"
