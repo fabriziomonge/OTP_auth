@@ -12,6 +12,8 @@ username = "fabriziomonge"
 token = "FXYszXlUIdZKW3xVC8da90mTm30RME"
 client = TextmagicRestClient(username, token)
 
+Lista = []
+
 # number = input("inserire il proprio numero di cellulare per autenticazione") #jupytercode
 
 number = st.text_input("inserire il proprio numero di cellulare per autenticazione", "4") #streamlit code
@@ -42,6 +44,7 @@ if number != "00394":
             PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
             st.write("ti trovi nella eccezione del try")
             generator = "OFF"
+            Lista.append(value)
             
 else:
     
@@ -59,7 +62,7 @@ if value != "2":
         
     else:
                 
-        if PSW == value:
+        if PSW == Lista[0]:
 #       print("Autenticazione riuscita") #jupytercode
     
             st.write("""
