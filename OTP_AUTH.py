@@ -22,7 +22,7 @@ number = "0039"+number
 
 if number != "00394":
     
-  
+    st.write(generator)
     try:
         if generator == "OFF":
             value = value
