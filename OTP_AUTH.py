@@ -34,7 +34,9 @@ if number != "00394":
         st.write("In attesa del codice di conferma")
     else:
         if PSW == value:
+            generator(inizio,fine,number)
             st.write("Convalidato")
         else:
+            generator(inizio,fine,number)
             st.write("Accesso negato")
     
