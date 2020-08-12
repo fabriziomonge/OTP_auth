@@ -68,9 +68,13 @@ if value != "2":
     
             autorizzazione = "NO"
             generator = "OFF"
+
             
-st.write(generator)
-st.write(PSW)
-st.write(value)
-st.write(type(PSW))
+try:
+    st.write(generator)
+    st.write(PSW)
+    st.write(value)
+    st.write(type(PSW))
+except:
+    st.write("dati incompleti")
 st.write(type(value))
