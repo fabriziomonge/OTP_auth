@@ -32,6 +32,7 @@ if number != "00394":
             value = str(value)
             message = client.messages.create(phones=number, text=value)
             PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
+            generator = "OFF"
             st.write("generator è diverso da off")            
             
     except:
@@ -40,6 +41,7 @@ if number != "00394":
             message = client.messages.create(phones=number, text=value)
             PSW = st.text_input("Inserire il codice ricevuto tramite sms", "in attesa") #streamlit code
             st.write("ti trovi nella eccezione del try")
+            generator = "OFF"
             
 else:
     
@@ -84,6 +86,7 @@ try:
     st.write(value)
     st.write(type(PSW))
     st.write(type(value))
+    st.write(number)
 except:
     st.write("dati incompleti")
 
