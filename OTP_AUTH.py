@@ -33,24 +33,29 @@ if number != "00394":
     # weYT0IOJ1c api password
   
     message = client.messages.create(phones=number, text=value)
-
-PSW = st.text_input("Inserire il codice ricevuto tramite sms") #streamlit code
-# PSW = input("Inserire il codice ricevuto tramite sms") #jupytercode
-
-if PSW == value:
-#     print("Autenticazione riuscita") #jupytercode
-    
-    st.write("""
-    # Autenticazione effettuata.
-    """) #streamlit code
-    
-    autorizzazione = "OK"
     
 else:
+    
+    value = "2"
+
+if value != "2":
+    PSW = st.text_input("Inserire il codice ricevuto tramite sms") #streamlit code
+    # PSW = input("Inserire il codice ricevuto tramite sms") #jupytercode
+
+    if PSW == value:
+#     print("Autenticazione riuscita") #jupytercode
+    
+        st.write("""
+        # Autenticazione effettuata.
+        """) #streamlit code
+    
+        autorizzazione = "OK"
+    
+    else:
 #     print("Autenticazione fallita!") #jupytercode
 
-    st.write("""
-    # Autenticazione fallita.
-    """) #streamlit code
+        st.write("""
+        # Autenticazione fallita.
+        """) #streamlit code
     
-    autorizzazione = "NO"
+        autorizzazione = "NO"
