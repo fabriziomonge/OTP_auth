@@ -41,19 +41,22 @@ def generator(inizio,fine,number):
 
 if number != "0039":
     
-    generator(inizio,fine,number)
-    value=generator(inizio,fine,number)[0]
-    st.write("## Controlla il telefono")
+    try:
     
-    PSW = st.text_input("Inserire il codice ricevuto tramite sms e premere invio", "")
+        generator(inizio,fine,number)
+        value=generator(inizio,fine,number)[0]
+        st.write("## Controlla il telefono")
     
-    if PSW == "":
-        st.write("# STATO: In attesa del codice di conferma")
-    else:
-        if PSW == value:
-            
-            st.write("# STATO: Utente Convalidato")
+        PSW = st.text_input("Inserire il codice ricevuto tramite sms e premere invio", "")
+    
+        if PSW == "":
+            st.write("# STATO: In attesa del codice di conferma")
         else:
+            if PSW == value:
             
-            st.write("# STATO: Accesso negato")
-    
+                st.write("# STATO: Utente Convalidato")
+            else:
+            
+                st.write("# STATO: Accesso negato")
+    except:
+        st.write("# Verifica il numero, non è stato possibile inviare il codice tramite sms")
