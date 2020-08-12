@@ -6,9 +6,9 @@
 
 import streamlit as st
 
-number = input("inserire il proprio numero di cellulare per autenticazione") #jupytercode
+# number = input("inserire il proprio numero di cellulare per autenticazione") #jupytercode
 
-# number = st.number_input("inserire il proprio numero di cellulare per autenticazione", 4) #streamlit code
+number = st.number_input("inserire il proprio numero di cellulare per autenticazione", 4) #streamlit code
 
 number = "0039"+number
 
@@ -34,11 +34,11 @@ if number != 4:
   
     message = client.messages.create(phones=number, text=value)
 
-# PSW = st.text_input("Inserire il codice ricevuto tramite sms") #streamlit code
-PSW = input("Inserire il codice ricevuto tramite sms") #jupytercode
+PSW = st.text_input("Inserire il codice ricevuto tramite sms") #streamlit code
+# PSW = input("Inserire il codice ricevuto tramite sms") #jupytercode
 
 if PSW == value:
-    print("Autenticazione riuscita") #jupytercode
+#     print("Autenticazione riuscita") #jupytercode
     
     st.write("""
     # Autenticazione effettuata.
@@ -47,24 +47,10 @@ if PSW == value:
     autorizzazione = "OK"
     
 else:
-    print("Autenticazione fallita!") #jupytercode
+#     print("Autenticazione fallita!") #jupytercode
 
     st.write("""
     # Autenticazione fallita.
     """) #streamlit code
     
     autorizzazione = "NO"
-    
-
-
-# In[13]:
-
-
-number
-
-
-# In[ ]:
-
-
-
-
